@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reCAPTCHA v3 Test</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=SITE_KEY"></script>
+</head>
+<body>
+    <h1>reCAPTCHA v3 Test</h1>
+    <p>Check the Browser Console (F12) for the token.</p>
+
+    <script>
+        // 2. Execute reCAPTCHA immediately on page load
+        grecaptcha.ready(function() {
+            grecaptcha.execute('SITE_KEY', {action: 'test_validation'})
+                .then(function(token) {
+                    console.log("Generated Token:");
+                    console.log(token);
+                    alert("Token generated! Copy it from the console.");
+                });
+        });
+    </script>
+</body>
+</html>
